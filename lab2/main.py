@@ -174,8 +174,8 @@ class DiaryApp(QWidget):
                 self.current_item = QListWidgetItem(
                     i['date'] + ' - ' + i['time'] + ' - ' + i['name'])
                 self.ui.event_list.addItem(self.current_item)
-                self.events[str(self.current_item)] = {'name': i['name'], 'time': i['time'], 'note': i['time'],
-                                                       'date': i['time']}
+                self.events[str(self.current_item)] = {'name': i['name'], 'time': i['time'], 'note': i['note'],
+                                                       'date': i['date']}
         f.close()
         self.ui.event_list.sortItems(Qt.AscendingOrder)
 

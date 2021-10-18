@@ -32,7 +32,7 @@ class LoginApp(QMainWindow, LoginUI):
         try:
             check_phone(self.line_phone.text())
             check_password(self.line_password.text())
-            self.lbl_info.setText('Вы удачно зарегистрировались')
+            self.lbl_info.setText("Вы удачно зарегистрировались")
         except Exception as e:
             self.lbl_info.setText(str(e))
 

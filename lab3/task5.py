@@ -34,9 +34,10 @@ def check_phone(phone):
 
     return new_phone
 
+
 if __name__ == '__main__':
     try:
-        print(check_phone('8(916) 12 4 32-6 7'))
+        print(check_phone('89695(830959'))
     except FormatError as e:
         print(e)
     except CountError as e:

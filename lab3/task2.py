@@ -39,7 +39,7 @@ def check_neighbors(password):
 
 def check_word(password, dic):
     for i in dic:
-        if password.find(i) != -1:
+        if password.lower().find(i) != -1:
             return False
     return True
 
@@ -53,7 +53,7 @@ def password(password):
 
 if __name__ == '__main__':
     try:
-        password('wortdD5ddd')
+        password('ydnskE3qw')
         print('ok')
     except AssertionError:
         print('error')

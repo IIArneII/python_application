@@ -33,4 +33,5 @@ def check_password(password):
                 raise PasswordFormatError('Обнаружены тройка соседних на клавиатуре букв')
 
 
-print(password('pa5Ffword'))
+if __name__ == '__main__':
+    print(password('ydnskE3qwe'))

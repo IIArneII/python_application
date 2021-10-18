@@ -29,6 +29,6 @@ def check_password(password):
 
 if __name__ == '__main__':
     try:
-        print(check_password('fwВ4ord'))
-    except Exception:
-        pass
+        print(check_password('ydnsddkk3Eqwe'))
+    except Exception as e:
+        print(e)

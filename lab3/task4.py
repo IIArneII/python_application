@@ -11,8 +11,9 @@ class DefaultList(list):
             return self.default
 
 
-s = DefaultList('default')
-s.extend([1, 5, 7])
-indexes = [0, 2, 1000, -1]
-for i in indexes:
-    print(s[i], end=" ")
+if __name__ == '__main__':
+    s = DefaultList('default')
+    s.extend([1, 5, 7])
+    indexes = [0, 2, 1000, -1]
+    for i in indexes:
+        print(s[i], end=" ")

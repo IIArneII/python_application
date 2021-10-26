@@ -40,6 +40,6 @@ def stack_calculator(line):
 
 
 if __name__ == '__main__':
-    line = '0 2 3 + / '
+    line = '2 3 + 20 *'
     line = line.split()
     print(stack_calculator(line))

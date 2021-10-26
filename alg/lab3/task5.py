@@ -141,3 +141,7 @@ if __name__ == '__main__':
     l.append(3)
     l.append(4)
     l.append(5)
+    print(l)
+    l.remove(0)
+    print(l)
+    print(l.search(0), ' ', l.search(1))

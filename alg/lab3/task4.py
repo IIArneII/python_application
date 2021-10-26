@@ -124,27 +124,41 @@ class UnorderedDeque:
 
 
 if __name__ == '__main__':
-    t1 = timeit.Timer("a1.addRear(j)", globals=globals())
-    t2 = timeit.Timer("a2.addRear(j)", globals=globals())
+    l = UnorderedDeque()
+    l.addFront(0)
+    l.addFront(1)
+    l.addRear(2)
+    l.addRear(3)
+    print(l.items)
+    print(l.removeFront())
+    print(l.removeRear())
+    print(l.items)
+    print(l.size())
+    print(l.isEmpty())
 
-    y1 = []
-    y2 = []
-    x = []
-    for i in range(1000, 10000, 100):
-        a1 = UnorderedDeque()
-        a2 = Deque()
-        x.append(i)
-        sum_y1 = 0
-        sum_y2 = 0
-        for j in range(i):
-            sum_y1 += t1.timeit(number=10)
-            sum_y2 += t2.timeit(number=10)
-        y1.append(sum_y1)
-        y2.append(sum_y2)
-        print(i)
+    if False:
+        t1 = timeit.Timer("a1.addFront(j)", globals=globals())
+        t2 = timeit.Timer("a2.addFront(j)", globals=globals())
 
-    plt.plot(x, y1, 'b')
-    plt.plot(x, y2, 'r')
-    plt.show()
+        y1 = []
+        y2 = []
+        x = []
+        for i in range(1000, 10000, 100):
+            a1 = UnorderedDeque()
+            a2 = Deque()
+            x.append(i)
+            sum_y1 = 0
+            sum_y2 = 0
+            for j in range(i):
+                sum_y1 += t1.timeit(number=10)
+                sum_y2 += t2.timeit(number=10)
+            y1.append(sum_y1)
+            y2.append(sum_y2)
+            print(i)
+
+        plt.plot(x, y1, 'b', label='UnorderedDeque - addFront')
+        plt.plot(x, y2, 'r', label='Deque - addFront')
+        plt.legend()
+        plt.show()
 
 

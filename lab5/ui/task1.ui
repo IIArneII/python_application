@@ -15,28 +15,42 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
+    <item row="1" column="2">
+     <widget class="QPushButton" name="btn_blue">
+      <property name="text">
+       <string>Синий</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="3">
+     <widget class="QPushButton" name="btn_left">
+      <property name="text">
+       <string>Повернуть влево</string>
+      </property>
+     </widget>
+    </item>
     <item row="1" column="0">
-     <widget class="QPushButton" name="pushButton">
+     <widget class="QPushButton" name="btn_red">
       <property name="text">
        <string>Красный</string>
       </property>
      </widget>
     </item>
     <item row="1" column="1">
-     <widget class="QPushButton" name="pushButton_2">
+     <widget class="QPushButton" name="btn_green">
       <property name="text">
        <string>Зеленый</string>
       </property>
      </widget>
     </item>
-    <item row="1" column="2">
-     <widget class="QPushButton" name="pushButton_3">
+    <item row="1" column="4">
+     <widget class="QPushButton" name="btn_right">
       <property name="text">
-       <string>Синий</string>
+       <string>Повернуть вправо</string>
       </property>
      </widget>
     </item>
-    <item row="0" column="0" colspan="3">
+    <item row="0" column="0" colspan="5">
      <widget class="QLabel" name="label">
       <property name="text">
        <string>TextLabel</string>

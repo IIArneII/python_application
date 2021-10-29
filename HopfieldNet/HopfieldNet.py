@@ -113,7 +113,6 @@ class HopfieldNetApp(QMainWindow, HopfieldNetUI):
 
     def mouse_btn(self, e: QtGui.QMouseEvent) -> None:
         x, y = e.windowPos().x(), e.windowPos().y()
-        print()
         for i in self.drow1_btns:
             for j in i:
                 if (j.x() < x - 12) and (j.x() + j.width() > x - 12) and (j.y() < y - 12) and (

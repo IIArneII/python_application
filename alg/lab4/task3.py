@@ -77,7 +77,7 @@ class HashTable:
                 found = True
                 data = self.data[position]
             else:
-                position = self.rehash(position, len(self.slots))
+                position = self.rehash(startslot, len(self.slots))
                 if position == startslot:
                     stop = True
         return data
@@ -95,7 +95,7 @@ class HashTable:
                 self.data[position] = None
                 self.slots[position] = None
             else:
-                position = self.rehash(position, len(self.slots))
+                position = self.rehash(startslot, len(self.slots))
                 if position == startslot:
                     stop = True
         self.resize()
@@ -122,7 +122,7 @@ if __name__ == '__main__':
     h = HashTable()
     h.put('yye', 13)
     h.put('yy1', 14)
-    h.put('yye1', 14)
+    h.put('yye1', 15)
     print(h.get('yy1'))
     print(h.slots)
     print(h.data)

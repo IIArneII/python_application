@@ -12,7 +12,7 @@ class Task4App(QMainWindow, Ui_MainWindow):
         self.init_ui()
 
     def init_ui(self):
-        pix = QPixmap('D:\\рэ\\Жопа.PNG')
+        pix = QPixmap('img/нло.PNG')
         self.lbl.setGeometry(self.lbl.x(), self.lbl.y(), pix.width(), pix.height())
         self.lbl.setPixmap(pix)
 

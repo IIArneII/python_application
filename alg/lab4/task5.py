@@ -30,6 +30,10 @@ if __name__ == '__main__':
             password = input('Пароль: ')
             f = open('passwords.txt', 'rb')
             l = f.readlines()
+            find = False
             for i in range(0, len(l), 3):
                 if login.encode() == l[i][0: -1] and check_password(password.encode(), l[i+1][0: -1], l[i+2][0: -1]):
+                    find = True
                     print('Удачно')
+            if not find:
+                print('Неверный логин или пароль')

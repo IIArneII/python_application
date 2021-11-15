@@ -37,19 +37,20 @@ class Task1App(QMainWindow, Ui_MainWindow):
         self.update_table(self.data)
 
     def update_table(self, data):
-        win = self.win(data)
         self.table.setColumnCount(3)
         d = [data[0][1], data[0][2], data[0][7]]
         self.table.setHorizontalHeaderLabels(d)
         self.table.setRowCount(0)
-        for i, row in enumerate(data[1:]):
-            self.table.setRowCount(self.table.rowCount() + 1)
-            for j, elem in enumerate(row):
-                if j in [1, 2, 7]:
-                    self.table.setItem(i, [1, 2, 7].index(j), QTableWidgetItem(elem))
-                    if i in win:
-                        self.table.item(i, [1, 2, 7].index(j)).setBackground(QColor(0, 200, 200))
-        self.table.resizeColumnsToContents()
+        if len(data) != 1:
+            win = self.win(data)
+            for i, row in enumerate(data[1:]):
+                self.table.setRowCount(self.table.rowCount() + 1)
+                for j, elem in enumerate(row):
+                    if j in [1, 2, 7]:
+                        self.table.setItem(i, [1, 2, 7].index(j), QTableWidgetItem(elem))
+                        if i in win:
+                            self.table.item(i, [1, 2, 7].index(j)).setBackground(QColor(0, 200, 200))
+            self.table.resizeColumnsToContents()
 
     def filter(self):
         data = []

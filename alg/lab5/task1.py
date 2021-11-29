@@ -53,18 +53,24 @@ class Graph:
         return iter(self.vert_list.values())
 
     def search(self, name, target):
+        paths = {}
         search_queue = deque()
-        for i in self.get_vertex(name).get_connections():
-            search_queue.append(i)
         searched = set()
+        search_queue.append(self.get_vertex(name))
         while search_queue:
             vertex = search_queue.popleft()
             if vertex not in searched:
                 if vertex.id == target:
-                    return True
+                    path = [vertex.id]
+                    while path[-1] != name:
+                        path.append(paths[path[-1]])
+                    return path[::-1]
+                searched.add(vertex)
                 for i in vertex.get_connections():
+                    if i.id not in paths:
+                        paths[i.id] = vertex.id
                     search_queue.append(i)
-        return False
+        return
 
 
 g = Graph()
@@ -79,6 +85,6 @@ g.add_edge('5', '2')
 g.add_edge('1', '4')
 g.add_edge('2', '3')
 g.add_edge('3', '5')
-g.add_edge('2', '4')
+g.add_edge('2', '1')
 
-print(g.search('3', '5'))
+print(g.search('3', '4'))

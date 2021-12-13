@@ -172,6 +172,7 @@ class Task6App(QMainWindow, Ui_MainWindow):
                                             WHERE name LIKE '%{self.line_name.text()}%'
                                             AND author LIKE '%{self.line_author.text()}%'
                                             ORDER BY name""").fetchall()
+        print(result)
         title = self.db_cursor.execute('PRAGMA table_info(books)')
         title = ['img'] + [i[1] for i in title]
 
